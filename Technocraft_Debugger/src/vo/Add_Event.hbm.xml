@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="vo.Add_Event_Vo" table="td_event_mst" lazy="false">
+  
+   	<id name="event_id" type="long" column="event_id" >
+   		<generator class="increment"/> 
+   	</id>
+   
+   	<property name="event_name"> 
+   		<column name="event_name" />
+   	</property>
+
+	<property name="event_desc"> 
+		<column name="event_desc"/> 
+	</property>
+	
+	<property name="event_time"> 
+		<column name="event_time"/> 
+	</property>
+	
+	<property name="event_date" type="date"> 
+		<column name="event_date"/> 
+	</property>
+	
+ </class>
+</hibernate-mapping>

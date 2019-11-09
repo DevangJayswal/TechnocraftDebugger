@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  
+  <class name="vo.user_mst_vo" table="td_user_mst" lazy="false">
+   
+   	<id name="user_id" type="long" column="ID" >
+   		<generator class="increment"/>
+  	</id>
+
+	<property name="user_name">
+   		<column name="User_Name" />
+  	</property>
+  	
+  	<property name="passwd">
+   		<column name="User_Password" />
+  	</property>
+  	
+  	<property name="user_type">
+   		<column name="User_type" />
+  	</property>
+  	
+  	<property name="status">
+  		<column name="Status" />
+  	</property>
+  	
+  	<property name="u_email">
+  		<column name="Email" />
+  	</property>
+  	
+  	<set name="linkset" table="link_mst" cascade="delete" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="u_id" not-null="true" />
+            </key>   
+            <one-to-many class="vo.LinkVo" />
+  	</set>
+  	
+	</class>
+
+</hibernate-mapping>

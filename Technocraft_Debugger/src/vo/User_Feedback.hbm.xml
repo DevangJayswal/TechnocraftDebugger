@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="vo.User_Feedback_Vo" table="td_user_feedback">
+   
+   	<id name="fb_id" type="long" column="ID" >
+   		<generator class="increment"/>
+  	</id>
+
+  	<property name="fb_username">
+   		<column name="Fb_Username" />
+  	</property>
+  
+  	<property name="fb_email">
+  		<column name="Fb_Email"/>
+  	</property>
+  	
+  	<property name="fb_message">
+  		<column name="Fb_Message"/>
+  	</property>
+  
+ </class>
+
+</hibernate-mapping>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="vo.Add_job_vo" table="td_job_mst">
+   
+   	<id name="job_id" type="long" column="ID" >
+   		<generator class="increment"/>
+  	</id>
+  	
+  	<many-to-one name="a" class="vo.Add_cat_vo" column="Cat_Name" cascade="delete"></many-to-one>
+  	
+  	<many-to-one name="b" class="vo.Add_sub_cat_vo" column="Sub_Cat_Name" cascade="delete"></many-to-one>
+
+  	<property name="job_title">
+   		<column name="Job_Title" />
+  	</property>
+  
+  	<property name="job_description">
+   		<column name="Job_Description" />
+  	</property>
+  	
+  	<property name="job_skills">
+   		<column name="job_skills" />
+  	</property>
+  	
+  	<property name="job_salary">
+   		<column name="Job_Salary" />
+  	</property>
+ 
+   	<property name="job_address">
+   		<column name="Job_Address" />
+  	</property>
+  	  	  
+  	<many-to-one name="c" class="vo.Add_country_vo" column="Country_Name" cascade="delete"></many-to-one>
+  	
+  	<many-to-one name="d" class="vo.Add_state_vo" column="State_Name" cascade="delete"></many-to-one>
+  	
+  	<many-to-one name="e" class="vo.Add_city_vo" column="City_Name" cascade="delete"></many-to-one>
+  	<property name="company_name">
+   		<column name="Company_Name" />
+  	</property>
+  	
+   	<property name="comapny_email">
+   		<column name="Company_Email" />
+  	</property>
+  	
+  	<property name="ref_name">
+   		<column name="Ref_Name" />
+  	</property>
+  	
+    <property name="ref_number">
+   		<column name="Ref_Number" />
+  	</property>
+  	
+  	<property name="ten_per">
+   		<column name="Ten_Per" />
+  	</property>
+  	
+   	<property name="twelve_per">
+   		<column name="twelve_per" />
+  	</property>
+  	
+   	<property name="graduation">
+   		<column name="graduation" />
+  	</property>
+  	
+   	<property name="app_date">
+   		<column name="App_Date" />
+  	</property>
+  	
+  	<property name="inter_date">
+   		<column name="Inter_Date" />
+  	</property>
+  	
+  	<property name="job_status">
+   		<column name="Job_Status" />
+  	</property>
+  	
+  	<many-to-one name="usrid" class="vo.user_mst_vo" column="User_Id" cascade="delete"></many-to-one>
+  	
+ </class>
+
+</hibernate-mapping>

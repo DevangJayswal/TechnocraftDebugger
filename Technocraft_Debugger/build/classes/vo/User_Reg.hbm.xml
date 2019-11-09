@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="vo.User_Reg_Vo" table="td_user_reg_dtl" lazy="false">
+   
+   	<id name="u_id" type="long" column="ID" >
+   		<generator class="increment"/>
+  	</id>
+
+  	<property name="u_name">
+   		<column name="Name" />
+  	</property>
+  	
+  	<property name="u_email">
+   		<column name="Email" />
+  	</property>
+  	
+  	<property name="u_number">
+   		<column name="Number" />
+  	</property>
+  	
+  	<property name="u_address">
+   		<column name="Address" />
+  	</property>
+  	
+  	<property name="user_gender" type="boolean"> 
+  		<column name="User_Gender"/> 
+  	</property>
+  	
+  	<property name="u_pincode">
+   		<column name="Pincode"/>
+  	</property>
+  	
+  	<property name="u_dob">
+   		<column name="DOB"/>
+  	</property>
+  	
+  	<many-to-one name="country" class="vo.Add_country_vo" column="Country_Name" cascade="delete"></many-to-one>
+  	
+  	<many-to-one name="state" class="vo.Add_state_vo" column="State_Name" cascade="delete"></many-to-one>
+  	
+  	<many-to-one name="city" class="vo.Add_city_vo" column="City_Name" cascade="delete"></many-to-one>
+  	
+  	<many-to-one name="user_mst_id" class="vo.user_mst_vo" column="user_id" cascade="delete"></many-to-one>
+  	
+  	<set name="attachset" table="User_Image_mpg" cascade="delete" inverse="true" >
+            <key>
+                <column name="u_id"  />
+            </key>
+            
+            <one-to-many class="vo.Image_Upload_vo" />
+    </set>
+  	
+ </class>
+
+</hibernate-mapping>

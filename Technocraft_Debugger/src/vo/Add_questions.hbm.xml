@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="vo.Add_questions_vo" table="td_questions_mst">
+   
+   	<id name="question_id" type="long" column="ID" >
+   		<generator class="increment"/>
+  	</id>
+
+  	<property name="question">
+   		<column name="Question" />
+  	</property>
+  
+  	<property name="ans1">
+   		<column name="Answer1" />
+  	</property>
+  	
+  	<property name="ans2">
+   		<column name="Answer2" />
+  	</property>
+  	
+  	<property name="ans3">
+   		<column name="Answer3" />
+  	</property>
+  	
+   	<property name="ans4">
+   		<column name="Answer4" />
+  	</property>
+  	
+   	<property name="question_marks" type="integer">
+   		<column name="Question_Marks" />
+  	</property>
+  	
+  	<property name="correct_ans">
+   		<column name="Correct_Answer" />
+  	</property>
+  	
+  	<many-to-one name="v1" class="vo.Add_cat_vo" cascade="delete" column="Cat_Name"></many-to-one>
+  	<many-to-one name="v2" class="vo.Add_sub_cat_vo" cascade="delete" column="Sub_Cat_Name"></many-to-one>
+  	<many-to-one name="v3" class="vo.Add_exam_vo" cascade="delete" column="Exam"></many-to-one>
+
+	<many-to-one name="usrid" class="vo.user_mst_vo" column="User_Id" cascade="delete"></many-to-one>
+
+</class>
+
+</hibernate-mapping>

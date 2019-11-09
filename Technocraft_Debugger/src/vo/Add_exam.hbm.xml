@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="vo.Add_exam_vo" table="td_exam_mst">
+   
+   	<id name="exam_id" type="long" column="ID" >
+   		<generator class="increment"/>
+  	</id>
+
+  	<property name="exam_name">
+   		<column name="Exam_Name" />
+  	</property>
+  
+  	<property name="exam_desc">
+  		<column name="Exam_Desc"/>
+  	</property>
+  	
+  	<property name="from_exam_date">
+  		<column name="Exam_date_from"/>
+  	</property>
+  	
+  	<property name="to_exam_date">
+  		<column name="Exam_date_to"/>
+  	</property>
+  	
+  	<property name="exam_time_hour" type="integer">
+  		<column name="Exam_Time_Hour"/>
+  	</property>
+  	
+  	<property name="exam_time_min" type="integer">
+  		<column name="Exam_Time_Minute"/>
+  	</property>
+  	
+  	<property name="total_marks" type="integer">
+  		<column name="Total_Marks"/>
+  	</property>
+  	
+  	<property name="pass_marks" type="integer">
+  		<column name="Pass_Marks"/>
+  	</property>
+  	
+  	<property name="exam_status">
+  		<column name="Exam_Status"/>
+  	</property>
+  
+  	<many-to-one name="v1" class="vo.Add_cat_vo" column="Cat_Name" cascade="delete" ></many-to-one>
+  	<many-to-one name="v2" class="vo.Add_sub_cat_vo" column="Sub_Cat_Name" cascade="delete"></many-to-one>
+  	
+  	<many-to-one name="usrid" class="vo.user_mst_vo" column="User_Id" cascade="delete"></many-to-one>
+  	
+ </class>
+
+</hibernate-mapping>

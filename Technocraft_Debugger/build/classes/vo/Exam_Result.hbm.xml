@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="vo.Exam_Result_vo" table="td_exam_result_dtl" lazy="false">
+   <id name="Result_id" type="long" column="Result_Id" >
+   <generator class="increment"/>
+  </id>
+
+	<property name="Marks" type="long">
+		<column name="Marks"/>
+	</property>
+
+	<many-to-one name="user_id" class="vo.user_mst_vo" cascade="delete"/>
+	<many-to-one name="Exam_id" class="vo.Add_exam_vo" cascade="delete"/>
+
+ </class>
+</hibernate-mapping>

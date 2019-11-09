@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="vo.Image_Upload_vo" table="User_Image_mpg" lazy="false" >
+  
+   <id name="Image_ID" type="int" column="Image_Id" ><generator class="increment"/> </id>
+ 
+   
+   <property name="Image_Name">
+   		<column name="Image_Name"/>
+   </property>
+   
+   <property name="path">
+   		<column name="Image_Path"/>
+   </property>
+   
+   <property name="User_type">
+   		<column name="User_Type"/>
+   </property>
+   
+   <many-to-one name="user_mpg_id" class="vo.user_mst_vo" cascade="delete"></many-to-one>
+   
+ </class>
+</hibernate-mapping>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+  <class name="vo.Company_Reg_Vo" table="td_company_reg_dtl">
+   
+   	<id name="c_id" type="long" column="ID" >
+   		<generator class="increment"/>
+  	</id>
+
+  	<property name="c_name">
+   		<column name="Company_Name" />
+  	</property>
+  	
+  	<property name="c_email">
+   		<column name="Company_Email" />
+  	</property>
+  	
+  	<property name="c_number">
+   		<column name="Company_Number" />
+  	</property>
+  	
+  	<property name="c_address">
+   		<column name="Company_Address" />
+  	</property>
+  	
+  	<property name="c_web_address">
+   		<column name="Company_Web_Address" />
+  	</property>
+  	
+  	<property name="c_pincode">
+   		<column name="Company_Pincode" />
+  	</property>
+ 
+ 	<many-to-one name="country" class="vo.Add_country_vo" column="Country_Name" cascade="delete"></many-to-one>
+  	
+  	<many-to-one name="state" class="vo.Add_state_vo" column="State_Name" cascade="delete"></many-to-one>
+  	
+  	<many-to-one name="city" class="vo.Add_city_vo" column="City_Name" cascade="delete"></many-to-one>
+  	
+  	
+  	<many-to-one name="user_id" class="vo.user_mst_vo" column="user_id" cascade="delete"></many-to-one>
+ 
+ </class>
+
+</hibernate-mapping>
